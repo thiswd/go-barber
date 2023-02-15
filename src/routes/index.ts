@@ -6,6 +6,7 @@ import sessionsRouter from './sessions.routes';
 const routes = Router();
 
 routes.use('/appointments', appointmentsRouter);
+// Toda rota em appointmentsRouter vai usar o endereço '/appointments'
 routes.use('/users', usersRouter);
 routes.use('/sessions', sessionsRouter);
 

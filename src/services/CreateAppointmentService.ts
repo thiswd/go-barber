@@ -6,6 +6,7 @@ import AppError from '../errors/AppError';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
+// Request porque recebe o dado service
 interface Request {
   provider_id: string;
   date: Date;
@@ -25,6 +26,7 @@ class CreateAppointmentService {
       throw new AppError('This appointmet is already booked');
     }
 
+    // Não precisa do await porque o create só instancia o registro, não salva
     const appointment = appointmentsRepository.create({
       provider_id,
       date: appointmentDate,

@@ -24,6 +24,17 @@ appointmentsRouter.post('/', async (request, response) => {
 
   const parsedDate = parseISO(date);
 
+  // const appointmentDate = startOfHour(parsedDate); // Vai para service porque faz parte da regra de negócio
+  // const findAppointmentInSameDate = appointments.find(appointment =>
+  //   isEqual(parsedDate, appointment.date),
+  // );
+
+  // if (findAppointmentInSameDate) {
+  //   return response
+  //     .status(400)
+  //     .json({ message: 'This appointment is already booked' });
+  // }
+
   const createAppointment = new CreateAppointmentService();
 
   const appointment = await createAppointment.execute({
